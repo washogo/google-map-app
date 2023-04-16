@@ -6,6 +6,8 @@ export const MapContainer = () => {
   const [location, setLocation] = useState<google.maps.LatLngLiteral | null>(null)
 
   useEffect(() => {
+    // 現在地の取得
+    // TODO: やや不安定なので改善する
     const searchNearbyPlaces = async () => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
